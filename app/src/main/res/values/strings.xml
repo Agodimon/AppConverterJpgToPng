@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppConverterJpgToPng</string>
+    <string name="btn_convert_jpeg_to_png">Convert JPEG To PNG</string>
+    <string name="text">Bitmap format changed.</string>
 </resources>
