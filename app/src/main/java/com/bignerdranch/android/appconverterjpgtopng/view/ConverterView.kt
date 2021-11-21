@@ -1,10 +1,12 @@
 package com.bignerdranch.android.appconverterjpgtopng.view
 
+import androidx.annotation.StringRes
 import moxy.MvpView
 import moxy.viewstate.strategy.SingleStateStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 interface ConverterView:MvpView {
+
     @StateStrategyType(SingleStateStrategy::class)
     fun showSuccess(path: String)
 
@@ -12,5 +14,5 @@ interface ConverterView:MvpView {
     fun pickImage()
 
     @StateStrategyType(SingleStateStrategy::class)
-    fun showError(throwable: Throwable)
+    fun showError(@StringRes msg: Int)
 }

@@ -8,5 +8,4 @@ class ConverterScreen : FragmentScreen {
 
     override fun createFragment(factory: FragmentFactory): Fragment =
         ConverterFragment.newInstance()
-
 }

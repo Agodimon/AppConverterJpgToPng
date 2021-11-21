@@ -1,17 +1,13 @@
 package com.bignerdranch.android.appconverterjpgtopng.view
 
 import android.os.Bundle
-import by.kirich1409.viewbindingdelegate.viewBinding
-import com.bignerdranch.android.appconverterjpgtopng.App.Navigator.navigatorHolder
-import com.bignerdranch.android.appconverterjpgtopng.App.Navigator.router
 import com.bignerdranch.android.appconverterjpgtopng.R
-import com.bignerdranch.android.appconverterjpgtopng.databinding.ActivityMainBinding
+import com.bignerdranch.android.appconverterjpgtopng.unity.Navigator.navigatorHolder
+import com.bignerdranch.android.appconverterjpgtopng.unity.Navigator.router
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import moxy.MvpAppCompatActivity
 
 class MainActivity : MvpAppCompatActivity(R.layout.activity_main) {
-    private val binding by viewBinding(ActivityMainBinding::bind)
-
 
     private val navigator = AppNavigator(this, android.R.id.content)
 
@@ -22,7 +18,6 @@ class MainActivity : MvpAppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         savedInstanceState ?: router.newRootScreen(ConverterScreen())
     }
 
@@ -30,6 +25,4 @@ class MainActivity : MvpAppCompatActivity(R.layout.activity_main) {
         navigatorHolder.removeNavigator()
         super.onPause()
     }
-
-
 }
